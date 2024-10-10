@@ -41,6 +41,10 @@
                 width: 25px;
                 height: 25px;
             }
+
+            .reset-button {
+                cursor: pointer;
+            }
         </style>
     </head>
 
@@ -64,11 +68,11 @@
            > <img src="./images/scissors-image.png"> </button>
         </div>
            
-        <p class="js-result"></p>
-        <p class="js-moves"></p>
+        <p class="js-result">this shows the result</p>
+        <p class="js-moves">this show both's moves</p>
         <p class="js-score"></p>
 
-        <button onclick="
+        <button class= "reset-button" onclick="
             score.wins = 0;
             score.losses = 0;
             score.ties = 0;
