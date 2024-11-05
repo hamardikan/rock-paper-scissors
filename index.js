@@ -6,6 +6,52 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay (){
+    if (!isAutoPlaying){
+        intervalId = setInterval(() => {
+            const playerMove = pickComputerMove();
+            playGame(playerMove)
+            }, 1000);
+        isAutoPlaying = true;
+    } else {
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+    }
+
+};
+
+    document.querySelector('.js-rock-button')
+    .addEventListener('click', () => {
+        playGame('rock');
+    });
+
+    document.querySelector('.js-paper-button')
+    .addEventListener('click', () => {
+        playGame('paper');
+    });
+
+    document.querySelector('.js-scissors-button')
+    .addEventListener('click', () => {
+        playGame('scissors');
+    });
+
+    document.body.addEventListener('keydown', (event) => {
+        switch(event.key){
+            case 'r':
+                playGame('rock')
+                break;
+            case 'p':
+                playGame('paper')
+                break;
+            case 's':
+                playGame('scissors')
+                break;
+            default:
+        }
+    })
 function playGame(playerMove){
     const computerMove = pickComputerMove();
 

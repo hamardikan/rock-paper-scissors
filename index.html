@@ -9,19 +9,16 @@
         <p class="title"> Simple Rock, Paper, Scissors</p>
         <p>Choose your move!</p>
         <div class ="playerOptions">
-        <button onclick="
-                playGame('rock')
-           " class="moveIcons"
+        <button 
+        class="moveIcons js-rock-button"
            ><img src="./images/rock-image.png"></button>
 
-        <button onclick="
-             playGame('paper')
-            " class="moveIcons"
+        <button 
+        class="moveIcons js-paper-button"
             ><img src="./images/paper-image.png"></button>
 
-        <button onclick="
-           playGame('scissors')
-           " class="moveIcons"
+        <button 
+        class="moveIcons js-scissors-button"
            > <img src="./images/scissors-image.png"> </button>
         </div>
            
@@ -36,6 +33,12 @@
             localStorage.removeItem('score');
             updateScoreElement();
         ">Reset Score</button>
+
+        <button class = "auto-play-button"
+        onclick="
+            autoPlay()
+        ">
+            Auto Play</button>
 
         <div>
             <p> The Odin Project 2024</p>
